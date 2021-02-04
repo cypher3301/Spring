@@ -12,5 +12,8 @@
 
     <bean id="musicPlayer" class="ua.mytestprojects.springapp.music.MusicPlayer">
         <property name="music" ref="musicBean"/>
+
+        <property name="name" value="Some name"/>
+        <property name="volume" value="50"/>
     </bean>
 </beans>
