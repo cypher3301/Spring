@@ -18,8 +18,14 @@ public class MusicPlayer {
 
     public MusicPlayer() {
     }
-
     public void playMusic(){
+            System.out.println("Playing: " + music.getSong());
+//        musicList.forEach(x->{
+//            System.out.println(x.getSong());
+//        });
+//        System.out.println("Playing: "+music.getSong());
+    }
+    public void playMusicList(){
         for (Music music1 : musicList) {
             System.out.println("Playing: " + music1.getSong());
         }
