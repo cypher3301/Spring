@@ -1,5 +1,7 @@
 package ua.mytestprojects.springapp.music;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class JazzMusic implements Music{
@@ -8,8 +10,8 @@ public class JazzMusic implements Music{
         return "I Got a Woman";
     }
 
-    @Override
-    public List<String> getListSing() {
-        return null;
+    public List<String> getListSing(){
+        return new ArrayList<>(Arrays.asList("Hit the road Jeck","road vald", "popa"));
     }
+
 }
