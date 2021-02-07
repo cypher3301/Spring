@@ -1,10 +1,7 @@
 package ua.mytestprojects.springapp;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ua.mytestprojects.springapp.music.ClassicalMusic;
-import ua.mytestprojects.springapp.music.Computer;
-import ua.mytestprojects.springapp.music.Music;
-import ua.mytestprojects.springapp.music.MusicPlayer;
+import ua.mytestprojects.springapp.music.*;
 
 public class TestSpring {
     public static void main(String[] args) {
@@ -14,11 +11,16 @@ public class TestSpring {
 
 
 
-//        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-//        musicPlayer.playMusic();
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 
-        Computer computer = context.getBean("computer", Computer.class);
-        System.out.println(computer);
+        for (int i = 0; i < 10; i++) {
+            System.out.println(musicPlayer.playMusic(Genre.ROCK));
+            System.out.println(musicPlayer.playMusic(Genre.CLASSICAL));
+            System.out.println();
+        }
+
+//        Computer computer = context.getBean("computer", Computer.class);
+//        System.out.println(computer);
         context.close();
     }
 }
