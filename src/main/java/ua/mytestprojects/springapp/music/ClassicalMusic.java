@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@Component("classicalMusic")
-//@Scope("prototype")
+//@Component("classicalMusic")
+@Scope("prototype")
 public class ClassicalMusic implements Music{
 //    private ClassicalMusic() {
 //    }

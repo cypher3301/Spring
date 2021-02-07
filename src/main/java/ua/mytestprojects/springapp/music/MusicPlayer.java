@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.Random;
 
 
-@Component
+//@Component
 public class MusicPlayer {
     @Value("${musicPlayer.name}")
     private String name;
