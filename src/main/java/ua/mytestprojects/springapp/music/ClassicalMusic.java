@@ -28,7 +28,6 @@ public class ClassicalMusic implements Music{
     }
 
     //pattern: factory method
-    @Autowired
     public static ClassicalMusic getClassicalMusic(){
         return new ClassicalMusic();
     }
