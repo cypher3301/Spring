@@ -1,5 +1,7 @@
 package ua.mytestprojects.springapp.music;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -9,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-//@Component("classicalMusic")
+@Component("classicalMusic")
 @Scope("prototype")
 public class ClassicalMusic implements Music{
 //    private ClassicalMusic() {
@@ -26,9 +28,10 @@ public class ClassicalMusic implements Music{
     }
 
     //pattern: factory method
-//    public static ClassicalMusic getClassicalMusic(){
-//        return new ClassicalMusic();
-//    }
+    @Autowired
+    public static ClassicalMusic getClassicalMusic(){
+        return new ClassicalMusic();
+    }
     //pattern: factory method
 
     @Override

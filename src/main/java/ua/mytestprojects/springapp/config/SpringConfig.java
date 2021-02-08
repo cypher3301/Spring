@@ -8,47 +8,45 @@ import java.util.Arrays;
 import java.util.List;
 
 @Configuration
-//@ComponentScan("ua.mytestprojects.springapp.music")
+@ComponentScan("ua.mytestprojects.springapp.music")
 @PropertySource("classpath:musicPlayer.properties")
 public class SpringConfig {
 
+    //    @Bean
+//    @Scope("prototype")
+//    public ClassicalMusic classicalMusic(){
+//        return new ClassicalMusic();
+//    }
     @Bean
-    @Scope("prototype")
-    public ClassicalMusic classicalMusic(){
-        return new ClassicalMusic();
-    }
-    @Bean
-    public RockMusic rockMusic(){
+    public RockMusic rockMusic() {
         return new RockMusic();
     }
 
     @Bean
-    public JazzMusic jazzMusic(){
+    public JazzMusic jazzMusic() {
         return new JazzMusic();
     }
+
     @Bean
-    public MetalMusic metalMusic(){
+    public MetalMusic metalMusic() {
         return new MetalMusic();
     }
 
     @Bean
-    public List<Music> musicList(){
+    public List<Music> musicList() {
         return Arrays.asList(
                 rockMusic(),
                 jazzMusic(),
-                classicalMusic(),
+//                classicalMusic(),
+                ClassicalMusic.getClassicalMusic(),
                 jazzMusic()
         );
     }
 
     @Bean
-    public MusicPlayer musicPlayer(){
+    public MusicPlayer musicPlayer() {
         return new MusicPlayer(musicList());
     }
-
-
-
-
 
 
 //    @Bean
@@ -57,7 +55,7 @@ public class SpringConfig {
 //    }
 
     @Bean
-    public Computer computer(){
+    public Computer computer() {
         return new Computer(musicPlayer());
     }
 
