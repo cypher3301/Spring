@@ -1,9 +1,8 @@
-package ua.mytestprojects.springapp;
+package ua.mytestprojects.springapp.main;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ua.mytestprojects.springapp.config.SpringConfig;
-import ua.mytestprojects.springapp.music.*;
+import ua.mytestprojects.springapp.beans.*;
 
 public class TestSpring {
     public static void main(String[] args) {

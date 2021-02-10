@@ -1,14 +1,13 @@
 package ua.mytestprojects.springapp.config;
 
 import org.springframework.context.annotation.*;
-import ua.mytestprojects.springapp.music.*;
+import ua.mytestprojects.springapp.beans.*;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 @Configuration
-@ComponentScan("ua.mytestprojects.springapp.music")
+@ComponentScan("ua.mytestprojects.springapp.beans")
 @PropertySource("classpath:musicPlayer.properties")
 public class SpringConfig {
 

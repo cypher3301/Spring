@@ -1,4 +1,4 @@
-package ua.mytestprojects.springapp.music;
+package ua.mytestprojects.springapp.beans;
 
 import java.util.List;
 

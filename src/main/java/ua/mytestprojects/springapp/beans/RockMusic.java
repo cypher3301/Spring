@@ -1,6 +1,4 @@
-package ua.mytestprojects.springapp.music;
-
-import org.springframework.stereotype.Component;
+package ua.mytestprojects.springapp.beans;
 
 import java.util.ArrayList;
 import java.util.Arrays;

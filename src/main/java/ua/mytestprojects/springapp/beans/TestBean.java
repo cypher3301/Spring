@@ -1,4 +1,4 @@
-package ua.mytestprojects.springapp;
+package ua.mytestprojects.springapp.beans;
 
 public class TestBean {
     private String name;

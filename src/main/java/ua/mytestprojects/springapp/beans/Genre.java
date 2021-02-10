@@ -1,4 +1,4 @@
-package ua.mytestprojects.springapp.music;
+package ua.mytestprojects.springapp.beans;
 
 public enum Genre {
     CLASSICAL, ROCK, METAL, JAZZ;
