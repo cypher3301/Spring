@@ -6,10 +6,13 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import org.thymeleaf.spring5.view.ThymeleafView;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.templatemode.TemplateMode;
+
+import java.util.Collections;
 
 
 @Configuration
@@ -57,12 +60,26 @@ public class SpringConfig implements WebMvcConfigurer {
         return templateEngine;
     }
 
+    @Bean ThymeleafViewResolver viewResolver(){
+        ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
+        viewResolver.setTemplateEngine(templateEngine());
+        // NOTE 'order' and 'viewNames' are optional
+        viewResolver.setOrder(1);
+        viewResolver.setViewNames(new String[]{".html",".xhtml"});
+        return viewResolver;
+    }
+
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
-        ThymeleafViewResolver resolver = new ThymeleafViewResolver();
-        resolver.setTemplateEngine(templateEngine());
-//        resolver.setOrder(1);
-//        resolver.setViewNames(new String[]{".html",".xhtml"});
-        registry.viewResolver(resolver);
+        registry.viewResolver(viewResolver());
+    }
+
+
+    @Bean
+    @Scope("prototype")
+    public ThymeleafView thymeleafView(){
+        ThymeleafView view =new ThymeleafView("main");
+        view.setStaticVariables(Collections.singletonMap("footer","The ACME Fruit Company"));
+        return view;
     }
 }

@@ -41,7 +41,8 @@
 
     <bean class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
         <property name="templateEngine" ref="templateEngine"/>
+        <!-- NOTE 'order' and 'viewNames' are optional -->
         <property name="order" value="1"/>
-        <property name="viewNames" value="*"/>
+        <property name="viewNames" value="*.html,*xml"/>
     </bean>
 </beans>
