@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+  <persistence-unit name="default">
+
+      <class>ua.mytestprojects.springapp.entity.AlbumEntity</class>
+      <class>ua.mytestprojects.springapp.entity.ArtistEntity</class>
+      <class>ua.mytestprojects.springapp.entity.CustomerEntity</class>
+      <class>ua.mytestprojects.springapp.entity.EmployeeEntity</class>
+      <class>ua.mytestprojects.springapp.entity.GenreEntity</class>
+      <class>ua.mytestprojects.springapp.entity.InvoiceEntity</class>
+      <class>ua.mytestprojects.springapp.entity.InvoicelineEntity</class>
+      <class>ua.mytestprojects.springapp.entity.MediatypeEntity</class>
+      <class>ua.mytestprojects.springapp.entity.PlaylistEntity</class>
+      <class>ua.mytestprojects.springapp.entity.PlaylisttrackEntity</class>
+      <class>ua.mytestprojects.springapp.entity.TrackEntity</class>
+      <properties>
+          <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/chinook"/>
+          <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
+      </properties>
+  </persistence-unit>
+</persistence>
