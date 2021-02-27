@@ -11,6 +11,7 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 
 
+
 @Configuration
 @ComponentScan("ua.mytestprojects.springapp")
 @EnableWebMvc
@@ -26,7 +27,7 @@ public class SpringConfig  implements WebMvcConfigurer {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(applicationContext);
         templateResolver.setPrefix("/WEB-INF/views");
-        templateResolver.setSuffix(".html");
+        templateResolver.setSuffix(".jsp");
         return templateResolver;
     }
 
@@ -37,6 +38,7 @@ public class SpringConfig  implements WebMvcConfigurer {
         templateEngine.setEnableSpringELCompiler(true);
         return templateEngine;
     }
+
 
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {

@@ -15,7 +15,7 @@ public class Computer {
         this.id = 1;
     }
 
-    @Autowired
+//    @Autowired
     public void setComputer(MusicPlayer musicPlayer) {
         this.musicPlayer = musicPlayer;
         this.id=2;

@@ -9,18 +9,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@Component("classicalMusic")
-@Scope("prototype")
+//@Component("classicalMusic")
+//@Scope("prototype")
 public class ClassicalMusic implements Music{
 //    private ClassicalMusic() {
 //    }
 //
-    @PostConstruct
+//    @PostConstruct
     public void doMyInit(){
         System.out.println("Doing my initialization");
     }
 
-    @PreDestroy
+//    @PreDestroy
     public void doMyDestroy(){
         System.out.println("Doing my destruction");
     }
