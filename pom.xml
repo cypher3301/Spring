@@ -18,11 +18,11 @@
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
 
-<!--    <spring.version>5.2.12.RELEASE</spring.version>-->
+    <spring.version>5.2.12.RELEASE</spring.version>
     <thymeleaf.version>3.0.12.RELEASE</thymeleaf.version>
 
     <mysql.version>8.0.23</mysql.version>
-    <spring.version>5.3.4</spring.version>
+<!--    <spring.version>5.3.4</spring.version>-->
     <springDataJpa.version>2.4.4</springDataJpa.version>
     <hibernate.version>5.4.28.Final</hibernate.version>
     <servletApi.version>4.0.1</servletApi.version>

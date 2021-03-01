@@ -7,7 +7,7 @@ import ua.mytestprojects.springapp.entity.EmployeeEntity;
 import java.util.List;
 import java.util.Optional;
 
-public interface CustomizedEmployeesCrudRepository extends CrudRepository<EmployeeEntity, Long> {
+public interface CustomizedEmployeesCrudRepository extends CrudRepository<EmployeeEntity, Long>, CustomizedEmployees<EmployeeEntity> {
     // искать по полям firstName And LastName
     Optional<EmployeeEntity> findByFirstNameAndLastName(String firstName, String lastName);
     // найти первые 5 по FirstName начинающихся с символов и сортировать по FirstName

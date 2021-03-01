@@ -228,4 +228,8 @@ public class EmployeeEntity {
     public void setEmployeesByEmployeeId(Collection<EmployeeEntity> employeesByEmployeeId) {
         this.employeesByEmployeeId = employeesByEmployeeId;
     }
+
+    public void setDeleted(boolean b) {
+
+    }
 }
