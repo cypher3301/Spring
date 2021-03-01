@@ -14,7 +14,7 @@
                       base-class="ua.mytestprojects.springapp.repository.CustomizedEmployeesCrudRepository"/>
     <!--Задание постфикса для пользовательской реализации репозитория репозитория-->
     <jpa:repositories base-package="ua.mytestprojects.springapp.repository" repository-impl-postfix="Impl"/>
-
+    <jpa:repositories base-package="ua.mytestprojects.springapp.repository" base-class="ua.mytestprojects.springapp.repository.BaseRepositoryImpl"/>
     <context:component-scan base-package="ua.mytestprojects.springapp"/>
 
 

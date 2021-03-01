@@ -7,7 +7,9 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "employee", schema = "chinook", catalog = "")
-public class EmployeeEntity {
+public class EmployeeEntity implements BaseEntity{
+    private boolean deleted;
+
     private Long id;
     private int employeeId;
     private String lastName;
@@ -229,7 +231,13 @@ public class EmployeeEntity {
         this.employeesByEmployeeId = employeesByEmployeeId;
     }
 
-    public void setDeleted(boolean b) {
+    @Override
+    public Boolean getDeleted() {
+        return deleted;
+    }
 
+    @Override
+    public void setDeleted(Boolean deleted) {
+        this.deleted = deleted;
     }
 }
