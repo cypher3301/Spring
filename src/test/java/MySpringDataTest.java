@@ -7,12 +7,17 @@ import org.springframework.transaction.annotation.Transactional;
 import ua.mytestprojects.springapp.entity.CustomerEntity;
 import ua.mytestprojects.springapp.entity.EmployeeEntity;
 import ua.mytestprojects.springapp.repository.CustomizedEmployeesCrudRepository;
+import ua.mytestprojects.springapp.repository.EmployeesEntityRepository;
 
 import java.util.List;
 import java.util.Optional;
 
 @SpringBootTest
 public class MySpringDataTest {
+
+    @Autowired
+    private EmployeesEntityRepository entityRepository;
+
     @Autowired
     private CustomizedEmployeesCrudRepository employeesCrudRepository;
 
@@ -27,6 +32,12 @@ public class MySpringDataTest {
     public void testFindByFirstNameStartsWithOrderByFirstNamePage(){
         List<EmployeeEntity> list = employeesCrudRepository.findByFirstNameStartsWith("A", PageRequest.of(1,3, Sort.by("firstName")));
         list.forEach(e-> System.out.println(e.getFirstName()+" " + e.getLastName()));
+    }
+
+    @Test
+    @Transactional
+    public void testEntityName(){
+        List<EmployeeEntity> employeeEntityList = entityRepository.findMarked(true);
     }
 
 }

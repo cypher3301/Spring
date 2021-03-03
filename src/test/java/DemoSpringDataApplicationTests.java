@@ -1,6 +1,7 @@
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Sort;
 import org.springframework.transaction.annotation.Transactional;
 import ua.mytestprojects.springapp.entity.EmployeeEntity;
 import ua.mytestprojects.springapp.repository.CustomizedEmployeesCrudRepository;
@@ -37,5 +38,11 @@ public class DemoSpringDataApplicationTests {
         Example<EmployeeEntity> example = Example.of(employeeEntity);
         Optional<EmployeeEntity> entityOptional = employeesBaseRepository.findOne(example);
         entityOptional.ifPresent(employeesBaseRepository::delete);
+    }
+
+    @Test
+    @Transactional
+    public void testFindEmployeesCountry(){
+        List<EmployeeEntity> list = crudRepository.findEmployeeWithCounty("USA", Sort.by("id"));
     }
 }
